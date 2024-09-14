@@ -5,21 +5,22 @@
 #
 
 # @lc code=start
-import itertools
 
 
 class Solution:
     def twoSum_1(self, nums: list[int], target: int) -> list[int]:
-        for l in range(len(nums)):
+        for a in range(len(nums)):
             for r in range(len(nums)):
-                if l == r:
+                if a == r:
                     continue
-                if nums[l] + nums[r] == target:
-                    return [l, r]
+                if nums[a] + nums[r] == target:
+                    return [a, r]
+
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         map = {val: idx for idx, val in enumerate(nums)}
         for idx, a in enumerate(nums):
-            if (idx_map := map.get(target-a)) and idx_map != idx:
-                return [idx,idx_map]
-# @lc code=end
+            if (idx_map := map.get(target - a)) and idx_map != idx:
+                return [idx, idx_map]
 
+
+# @lc code=end
