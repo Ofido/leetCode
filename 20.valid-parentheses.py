@@ -4,10 +4,26 @@
 # [20] Valid Parentheses
 #
 
+
 # @lc code=start
-parenteses = (('(', ')'), ('{', '}'), ('[', ']'))
 class Solution:
     def isValid(self, s: str) -> bool:
-        return all([s.count(par[0]) == s.count(par[1]) for par in parenteses])
-# @lc code=end
+        stack = []
 
+        for c in s:
+            if c == ")":
+                if not stack or stack.pop() != "(":
+                    return False
+            elif c == "}":
+                if not stack or stack.pop() != "{":
+                    return False
+            elif c == "]":
+                if not stack or stack.pop() != "[":
+                    return False
+            else:
+                stack.append(c)
+
+        return not stack
+
+
+# @lc code=end
