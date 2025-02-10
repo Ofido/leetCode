@@ -72,7 +72,6 @@ exclude_also = [
 [tool.mypy]
 python_version = "3.12"
 platform = "linux"
-plugins = ["pydantic.mypy"]
 
 exclude = [
     "common_layers",
@@ -90,8 +89,3 @@ ignore_missing_imports = true
 
 # for strict mypy: (this is the tricky one :-))
 disallow_untyped_defs = true
-
-[tool.pydantic-mypy]
-init_forbid_extra = true
-init_typed = true
-warn_required_dynamic_aliases = true

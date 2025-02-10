@@ -4,9 +4,10 @@
 # [3265] Count Almost Equal Pairs I
 #
 
+
 # @lc code=start
 class Solution:
-    def countPairs(self, nums: List[int]) -> int:
-        
-# @lc code=end
+    def countPairs(self, nums: list[int]) -> int: ...
 
+
+# @lc code=end
